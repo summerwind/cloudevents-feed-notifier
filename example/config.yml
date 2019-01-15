@@ -1,0 +1,20 @@
+# URL to send events.
+endpoint: http://127.0.0.1:3000
+
+# Interval for fetching feed.
+# Example: "30m", "60s", "3h"
+interval: 10m
+
+# List of feed URL.
+feeds:
+- https://blog.docker.com/feed/
+- https://kubernetes.io/feed.xml
+- https://prometheus.io/blog/feed.xml
+- https://www.fluentd.org/blog/feed.rss
+- https://grpc.io/feed.xml
+- https://medium.com/feed/opentracing
+- https://medium.com/feed/jaegertracing
+- https://coredns.io/blog/index.xml
+- https://blog.rook.io/feed
+- https://blog.linkerd.io/feed/
+- https://github.com/kubernetes/kubernetes/releases.atom
