@@ -24,30 +24,31 @@ To start cloudevents-feed-notifier, specify the configuration file using the `-c
 
 ## Event
 
-Events are sent as CloudEvents in the following headers and body.
+Event are sent as CloudEvents using HTTP Transport Binding (Binary Content Mode).
 
 ### Request headers
 
 | Header | Value |
 | --- | --- |
 | CE-SpecVersion | 0.2 |
-| CE-Time        | (Published time) |
-| CE-ID          | (Auto generated UUID) |
+| CE-Time        | 2019-01-16T19:41:51+09:00 (Published time) |
+| CE-ID          | cffa4fa7-095b-485c-aaa8-a28e98a5f897 (Auto generated UUID) |
 | CE-Type        | feed.publish |
-| CE-Source      | (Entry URL) |
+| CE-Source      | https://github.com/kubernetes/kubernetes/releases/tag/v1.13.2 (Entry URL) |
 | Content-Type   | application/json |
 
 ### Request body
 
 ```
 {
-  "feed": {
-    "title": "XML feed title",
-    "url": "https://xml.feed",
+  "feed":{
+    "title": "Release notes from kubernetes",
+    "url": "https://github.com/kubernetes/kubernetes/releases.atom"
   },
-  "entry": {
-    "title": "Entry title",
-    "url": "https://xml.feed/entry",
+  "entry":{
+    "title": "v1.13.2",
+    "url": "https://github.com/kubernetes/kubernetes/releases/tag/v1.13.2",
+    "published_at": "2019-01-11T02:18:07Z"
   }
 }
 ```
