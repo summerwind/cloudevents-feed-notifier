@@ -182,6 +182,13 @@ func run(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("invalid interval: %v", err)
 	}
 
+	go func() {
+		err := notify(c)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Notify error: %v\n", err)
+		}
+	}()
+
 	sigCh := make(chan os.Signal, 1)
 	signal.Notify(sigCh, syscall.SIGTERM)
 
