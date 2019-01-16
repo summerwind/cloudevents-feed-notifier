@@ -110,8 +110,7 @@ func notify(c *Config) error {
 		now := time.Now()
 		since, ok := lastFetchedTime[feedURL]
 		if !ok {
-			since = time.Date(2018, 12, 24, 0, 0, 0, 0, time.UTC)
-			//since = now
+			since = now
 		}
 
 		body, err := fetch(feedURL)
