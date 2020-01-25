@@ -31,7 +31,6 @@ var lastFetchedTime map[string]time.Time
 
 func init() {
 	lastFetchedTime = map[string]time.Time{}
-	//t := time.Now()
 }
 
 func loadConfig(configPath string) (*Config, error) {
@@ -84,11 +83,11 @@ func publish(url string, event *Event) error {
 		return err
 	}
 
-	req.Header.Add("CE-SpecVersion", "0.2")
-	req.Header.Add("CE-ID", id.String())
-	req.Header.Add("CE-Time", t.Format(time.RFC3339))
-	req.Header.Add("CE-Type", "feed.publish")
-	req.Header.Add("CE-Source", event.Entry.URL)
+	req.Header.Add("ce-specversion", "1.0")
+	req.Header.Add("ce-type", "feed.publish")
+	req.Header.Add("ce-source", event.Entry.URL)
+	req.Header.Add("ce-id", id.String())
+	req.Header.Add("ce-time", t.Format(time.RFC3339))
 	req.Header.Add("Content-Type", "application/json")
 
 	req.Header.Add("User-Agent", fmt.Sprintf("%s/%s", UserAgent, VERSION))
