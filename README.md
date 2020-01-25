@@ -30,7 +30,7 @@ Event are sent as CloudEvents using HTTP Transport Binding (Binary Content Mode)
 
 | Header | Value |
 | --- | --- |
-| ce-specversion | 0.2 |
+| ce-specversion | 1.0 |
 | ce-type        | feed.publish |
 | ce-source      | https://github.com/kubernetes/kubernetes/releases/tag/v1.13.2 (Entry URL) |
 | ce-id          | cffa4fa7-095b-485c-aaa8-a28e98a5f897 (Auto generated UUID) |
