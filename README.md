@@ -30,11 +30,11 @@ Event are sent as CloudEvents using HTTP Transport Binding (Binary Content Mode)
 
 | Header | Value |
 | --- | --- |
-| CE-SpecVersion | 0.2 |
-| CE-Time        | 2019-01-16T19:41:51+09:00 (Published time) |
-| CE-ID          | cffa4fa7-095b-485c-aaa8-a28e98a5f897 (Auto generated UUID) |
-| CE-Type        | feed.publish |
-| CE-Source      | https://github.com/kubernetes/kubernetes/releases/tag/v1.13.2 (Entry URL) |
+| ce-specversion | 0.2 |
+| ce-type        | feed.publish |
+| ce-source      | https://github.com/kubernetes/kubernetes/releases/tag/v1.13.2 (Entry URL) |
+| ce-id          | cffa4fa7-095b-485c-aaa8-a28e98a5f897 (Auto generated UUID) |
+| ce-time        | 2019-01-16T19:41:51+09:00 (Published time) |
 | Content-Type   | application/json |
 
 ### Request body
